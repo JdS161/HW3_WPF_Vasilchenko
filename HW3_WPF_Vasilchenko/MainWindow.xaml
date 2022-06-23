@@ -1,0 +1,110 @@
+﻿<Window x:Class="HW3_WPF_Vasilchenko.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW3_WPF_Vasilchenko"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        x:Name="myWindow">
+    
+    
+    
+    
+    <Grid Background="#FFEEE3F7">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        
+        <!--Left upper corner-->
+        <Grid Grid.Row="0" Grid.Column="0" Background="#FFEAF7EA">
+            <Border BorderBrush="Black" BorderThickness="3">
+                
+            <StackPanel>
+                <TextBlock Text="- Password Box -" FontWeight="Bold" FontSize="32"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 60 0 0"/>
+                    <PasswordBox x:Name="pwdBox" Margin="10 10 10 0" MaxLength="255" 
+                                 PasswordChanged="pwdBox_PasswordChanged" />
+
+
+                    <!--Buttons-->
+                <StackPanel Orientation="Horizontal" Margin="0 10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button x:Name="btnClear" Content="Clear" Width="80" Height="30" Margin="0 0 5 0" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Click="btnClear_Click"/>
+                    <Button x:Name="btnPaste" Content="Paste Info" Width="80" Height="30" Margin="5 0 0 0"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" 
+                            Click="btnPaste_Click"/>
+                </StackPanel>
+
+            </StackPanel>
+            </Border>
+        </Grid>
+        
+        <!--Left bottom corner-->
+        <Grid Grid.Row="1" Grid.Column="0" Background="#FFEEE3F7">
+            <Border BorderBrush="Black" BorderThickness="3">
+                
+                <StackPanel>
+                    <TextBlock Text="- Scratch TextBox -" FontWeight="Bold" FontSize="32"
+                                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 60 0 0"/>
+                    <TextBox x:Name="tbScratchTextBox" Margin="10 10 10 0" />
+
+
+                    <!--Buttons-->
+                    <StackPanel Orientation="Horizontal" Margin="0 10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Button x:Name="btnCopy" Content="Copy Contents" Width="100" Height="30" Margin="0 0 5 0" 
+                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Click="btnCopy_Click"/>
+
+                    </StackPanel>
+
+                </StackPanel>
+            </Border>
+        </Grid>
+        
+        <!--Right column-->
+        <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Background="AliceBlue">
+            
+                <Border  BorderBrush="Black" BorderThickness="3">
+                    <StackPanel Orientation="Vertical" Margin="10 80 10 10">
+                    <TextBlock Text="Change Count:" Margin="10 20 0 0"/>
+                   
+                        <TextBlock x:Name="tbCounter" 
+                               Text="0" 
+                               FontSize="18" FontWeight="Bold" 
+                               Margin="10 0 0 0" 
+                               />
+                    <Label/>
+                    <TextBlock Text="Masking Character:" Margin="10 10 0 0"/>
+                    <ComboBox x:Name="cbMaskChar" Width="40" HorizontalAlignment="Left"
+                              Margin="10 5 0 10" SelectedIndex="0" >
+                        <ComboBoxItem>*</ComboBoxItem>
+                        <ComboBoxItem>#</ComboBoxItem>
+                        <ComboBoxItem>x</ComboBoxItem>
+                        <ComboBoxItem>@</ComboBoxItem>
+                        <ComboBoxItem>$</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Text="Max Input Length:" Margin="10 10 0 0"/>
+                    <TextBox x:Name="tbMaxLength" Text="Unlimited" Margin="10 5 50 10"/>
+                    <TextBlock Text="Current Max:" Margin="10 10 0 0"/>
+                    <TextBlock x:Name="tbLength" 
+                                   FontSize="18" FontWeight="Bold" Margin="10 0 10 0"/>
+
+                    </StackPanel>
+                </Border>
+            </Grid>
+            
+            
+        
+
+    </Grid>
+
+    
+</Window>
